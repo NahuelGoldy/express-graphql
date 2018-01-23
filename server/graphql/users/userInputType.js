@@ -1,5 +1,6 @@
 import {
   GraphQLString,
+  GraphQLInt,
   GraphQLInputObjectType,
   GraphQLNonNull,
 } from 'graphql';
@@ -8,19 +9,19 @@ const UserInputType = new GraphQLInputObjectType({
   name: 'UserInput',
   description: 'Input user payload',
   fields: () => ({
-    username: {
-      type: new GraphQLNonNull(GraphQLString),
+    password: {
+      type: GraphQLString,
     },
     email: {
       type: GraphQLString,
     },
-    phone: {
+    edad: {
+      type: GraphQLInt,
+    },
+    nombre: {
       type: GraphQLString,
     },
-    firstName: {
-      type: GraphQLString,
-    },
-    lastName: {
+    apellido: {
       type: GraphQLString,
     },
   }),
