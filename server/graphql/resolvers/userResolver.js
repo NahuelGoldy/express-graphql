@@ -9,7 +9,7 @@ const getUserByEmail = em => new Promise((resolve) => {
 });
 
 const findAndUpdateUser = input => new Promise((resolve) => {
-  Usuario.findOneAndUpdate({email : input.email}, {$set:{password: input.password, nombre: input.nombre, apellido: input.apellido, updatedAt: Date.now()}}, {upsert: true}).exec().then((us) => {
+  Usuario.findOneAndUpdate({email : input.email}, {$set: input}, {upsert: true}).exec().then((us) => {
     Usuario.findOne({ email: input.email }).then(
       z => {resolve(z);}
     );
