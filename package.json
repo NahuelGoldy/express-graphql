@@ -12,7 +12,7 @@
     "graphql",
     "express"
   ],
-  "author": "David Mráz <david.mraz@gmail.com>",
+  "author": "Nahuel Goldy",
   "license": "ISC",
   "dependencies": {
     "apollo-server-express": "^1.0.5",
