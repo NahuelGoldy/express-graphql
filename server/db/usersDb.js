@@ -9,13 +9,25 @@ const mongo = Mongoose.connect('mongodb://puchoo:mongo1234@40.84.38.216:27017/co
 
 const UsuarioSchema = Mongoose.Schema({
     apellido: String,
-    createdAt: { type: Date, default: Date.now },
-    email: String,
-    id: Number,
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    email: {
+        type: String,
+        unique: true
+    },
+    id: {
+        type: Number,
+        unique: true
+    },
     nombre: String,
     password: String,
     edad: Number,
-    updatedAt: { type: Date, default: Date.now }
+    updatedAt: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 

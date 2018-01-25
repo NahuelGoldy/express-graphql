@@ -7,6 +7,8 @@ import userMutations from './users/userMutations';
 import userQueries from './users/userQueries';
 import taskQueries from './tasks/taskQueries';
 import taskMutations from './tasks/taskMutations';
+import profesionQueries from './profesiones/profesionQueries';
+import profesionMutations from './profesiones/profesionMutations';
 
 export default new GraphQLSchema({
   query: new GraphQLObjectType({
@@ -14,6 +16,7 @@ export default new GraphQLSchema({
     fields: () => ({
       ...userQueries,
       ...taskQueries,
+      ...profesionQueries,
     }),
   }),
   mutation: new GraphQLObjectType({
@@ -21,6 +24,7 @@ export default new GraphQLSchema({
     fields: () => ({
       ...userMutations,
       ...taskMutations,
+      ...profesionMutations,
     }),
   }),
 });

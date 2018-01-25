@@ -6,6 +6,7 @@ import {
   GraphQLNonNull,
 } from 'graphql';
 import DateTimeScalar from '../scalars/dateTimeScalar';
+import Profesion from '../profesiones/profesionType';
 
 const UserType = new GraphQLObjectType({
   name: 'User',
@@ -28,6 +29,9 @@ const UserType = new GraphQLObjectType({
     },
     edad: {
       type: GraphQLInt,
+    },
+    profesion: {
+        type: new GraphQLNonNull(Profesion),
     },
     createdAt: {
       type: new GraphQLNonNull(DateTimeScalar),
